@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Router, Routes, Route, Link, useLocation } from "react-router-dom";
+import history from './history';
 import { Layout, Menu } from "antd";
 import {
   HomeOutlined,
@@ -160,7 +161,7 @@ const items = [
 
 function App() {
   return (
-    <Router>
+    <Router history={history}>
       <Layout style={{ minHeight: "100vh", background: "linear-gradient(135deg, #232526 0%, #1e3c72 60%, #00c6ff 100%)" }}>
         // ...
         <Header style={{ position: "fixed", top: 0, left: 0, width: "100vw", zIndex: 1000, background: "rgba(30,60,114,0.98)", padding: 0, boxShadow: "0 2px 12px rgba(0,0,0,0.2)", borderBottom: "2px solid #ffd700", color: "#ffd700", backdropFilter: "blur(8px)" }}>
